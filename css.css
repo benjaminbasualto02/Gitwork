@@ -43,7 +43,11 @@ body {
 
 .centrar {
   text-align: center;
-  color: rgb(212, 181, 0);
+  text-shadow: 
+  -2px -2px 0 #500303,        /* Sombra hacia la esquina superior izquierda */
+   2px -2px 0 #500303,        /* Sombra hacia la esquina superior derecha */
+  -2px  2px 0 #500303,        /* Sombra hacia la esquina inferior izquierda */
+   2px  2px 0#500303; 
 }
 
 .products-grid {
@@ -78,22 +82,23 @@ body {
 }
 
 .btn-agregar {
-  background-color: rgb(160, 136, 1);
+  color: rgb(255, 255, 255);
+  background-color: #500303;
   border-radius: 10px;
-  border-color: rgb(160, 136, 1);
+  border-color: #500303;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn-agregar:hover {
-  background-color: rgb(255, 217, 0);
-  border-color: rgb(255, 217, 0);
+  background-color:#be0202;
+  border-color: #be0202;
   transform: scale(1.05); /* Agranda el botón ligeramente */
 }
 
 /* Nueva clase para el texto dentro del modal */
 .modal-body p, .modal-body h5 {
-  color: black; /* Cambia el color del texto dentro del modal a negro */
+  color: rgb(255, 255, 255); /* Cambia el color del texto dentro del modal a negro */
 }
 
 body {
@@ -107,13 +112,100 @@ body {
 }
 
 #cartModalLabel {
-  color: black; /* Cambia el color del texto a negro */
+  color: rgb(255, 255, 255); /* Cambia el color del texto a negro */
 }
 
 #checkoutModalLabel {
-  color: black; /* Cambia el color del texto a negro */
+  color: rgb(255, 255, 255); /* Cambia el color del texto a negro */
 }
 
 #thankYouModalLabel {
-  color: black; /* Cambia el color del texto a negro */
+  color: rgb(255, 255, 255); /* Cambia el color del texto a negro */
+}
+
+  /* Cambiar el color del fondo y del texto del modal */
+  .custom-modal-bg {
+    background-color: #202225;
+    color: #ffffff;
+}
+
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Espacio entre los carruseles */
+  padding-bottom: 20px;
+}
+
+.carousel {
+  width: 80%; /* Ajusta este porcentaje según el tamaño deseado */
+  max-width: 600px; /* Tamaño máximo del carrusel */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Adapta la imagen al tamaño del carrusel */
+}
+
+/* Estilo del footer */
+.footer {
+  background-color: #202225;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-logo-image {
+  width: 60px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.footer-text {
+  margin: 0;
+  color: rgb(200, 200, 200);
+  font-size: 16px;
+}
+
+.footer-social {
+  margin: 10px 0;
+}
+
+.social-icon {
+  color: #ffffff;
+  font-size: 20px;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: #be0202;
+}
+
+.footer-contact a {
+  color: #be0202;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  padding-top: 10px;
+  font-size: 12px;
+  color: rgb(150, 150, 150);
 }
