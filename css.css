@@ -7,10 +7,16 @@ body {
 }
 
 .navbar {
-  background-color: #000000 !important;
+  background-color: #202225 !important; 
 }
+
+/* Mantiene el color blanco en los enlaces y el botón del carrito */
 .navbar .navbar-brand, .navbar .btn-outline-light {
   color: #ffffff !important;
+}
+
+#cartItems p {
+  color: black; /* Cambia el color del texto a negro */
 }
 
 /* Estilo de la imagen del logo en la navbar */
@@ -18,7 +24,6 @@ body {
   height: 40px;
   margin-right: 10px;
 }
-
 
 /* Estilos para los cuadros de productos */
 .card {
@@ -36,7 +41,7 @@ body {
   transform: scale(1.1);
 }
 
-.centrar{
+.centrar {
   text-align: center;
   color: rgb(212, 181, 0);
 }
@@ -63,6 +68,7 @@ body {
       grid-template-columns: 1fr;
   }
 }
+
 .card-body {
   text-align: center;
   flex-grow: 1;
@@ -71,18 +77,43 @@ body {
   justify-content: space-between;
 }
 
-.btn-agregar{
+.btn-agregar {
   background-color: rgb(160, 136, 1);
   border-radius: 10px;
-  border-color:rgb(160, 136, 1);
+  border-color: rgb(160, 136, 1);
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  
 }
 
-.btn-agregar:hover{
+.btn-agregar:hover {
   background-color: rgb(255, 217, 0);
   border-color: rgb(255, 217, 0);
   transform: scale(1.05); /* Agranda el botón ligeramente */
 }
 
+/* Nueva clase para el texto dentro del modal */
+.modal-body p, .modal-body h5 {
+  color: black; /* Cambia el color del texto dentro del modal a negro */
+}
+
+body {
+  background-image: url("Pics/Wallpaper.png");
+  background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-position: center center; /* Centra la imagen en la pantalla */
+  background-attachment: fixed; /* La imagen permanece fija al hacer scroll */
+  padding-top: 70px;
+  color: white; /* Asegura que el texto sea legible sobre la imagen */
+}
+
+#cartModalLabel {
+  color: black; /* Cambia el color del texto a negro */
+}
+
+#checkoutModalLabel {
+  color: black; /* Cambia el color del texto a negro */
+}
+
+#thankYouModalLabel {
+  color: black; /* Cambia el color del texto a negro */
+}
