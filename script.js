@@ -13,7 +13,6 @@ function addItem(nombre, precio) {
     }
     
     actualizarCarrito();
-    alert(`${nombre} añadido al carrito.`);
 }
 
 // Función para actualizar el contenido del carrito
@@ -28,12 +27,11 @@ function actualizarCarrito() {
         total += item.precio * item.cantidad;
         cartItems.innerHTML += `
             <div class="d-flex justify-content-between">
-                <p>${item.nombre} (x${item.cantidad})</p>
-                <p>$${(item.precio * item.cantidad).toLocaleString()}</p>
                 <div>
-                    <button class="btn btn-sm btn-warning" onclick="cambiarCantidad(${index}, -1)">-</button>
-                    <button class="btn btn-sm btn-success" onclick="cambiarCantidad(${index}, 1)">+</button>
-                    <button class="btn btn-sm btn-danger" onclick="eliminarItem(${index})">Eliminar</button>
+                    <span style="color: white;">${item.nombre}</span> - $${item.precio} x ${item.cantidad}
+                    <button class="btn-agregar" onclick="cambiarCantidad(${index}, -1)">-</button>
+                    <button class="btn-agregar" onclick="cambiarCantidad(${index}, 1)">+</button>
+                    <button class="btn-agregar" onclick="eliminarItem(${index})">Eliminar</button>
                 </div>
             </div>
         `;
