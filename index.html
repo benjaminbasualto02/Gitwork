@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-      <link rel="stylesheet" href="css.css">
-      <title> Ghost Clothing </title>
-  </head>
-  <body>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title> Ghost Clothing </title>
+</head>
+<body>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
 
-      <!--Navbar-->
-
-      <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid">
             <img src="Pics/Ghost.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
             <a class="navbar-brand" href="#">~ Ghost Clothing ~</a>
@@ -30,63 +29,55 @@
         </div>
     </nav>
 
-      <h1 class="centrar">Prueba estas prendas elegidas para ti</h1>
-    <!--Carrusel de imagenes-->
-  <div id="carouselExample" class="carousel slide" style="max-width: 700px; max-height: 600px; margin: auto; border-radius: 15px; overflow: hidden; border: 3px solid #212529;">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="Clothing/Polera1.jpeg" class="d-block w-100" alt="Muestra 1" style="border-radius: 15px;">
-        </div>
-        <div class="carousel-item">
-          <img src="Clothing/Polera2.jpeg" class="d-block w-100" alt="Muestra 2" style="border-radius: 15px;">
-        </div>
-        <div class="carousel-item">
-          <img src="Clothing/Polera3.jpeg" class="d-block w-100" alt="Muestra 3" style="border-radius: 15px;">
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-
     <!---->
+    <h1 class="centrar">Prueba estas prendas elegidas para ti</h1>
 
-    <!--Carrito-->
-        <!-- Modal para el carrito -->
-<!-- Modal para el carrito -->
-<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+    <!-- Carrusel de imagenes principal -->
+
+    <div id="carouselExample" class="carousel slide" style="max-width: 700px; max-height: 600px; margin: auto; border-radius: 15px; overflow: hidden; border: 3px solid #212529;">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="Clothing/Polera1.jpeg" class="d-block w-100" alt="Muestra 1" style="border-radius: 15px;">
             </div>
-            <div class="modal-body custom-cart-item-color" id="cartItems">
-                <!-- Aquí es donde se agregarán los productos del carrito -->
+            <div class="carousel-item">
+                <img src="Clothing/Polera2.jpeg" class="d-block w-100" alt="Muestra 2" style="border-radius: 15px;">
             </div>
-            <div class="modal-footer">
-                <h5>Total: $<span id="totalPrice">0</span></h5>
-                <button type="button" class="btn-agregar" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn-agregar" onclick="abrirCheckout()" data-bs-toggle="modal" data-bs-target="#checkoutModal">Proceder a Comprar</button>
+            <div class="carousel-item">
+                <img src="Clothing/Polera3.jpeg" class="d-block w-100" alt="Muestra 3" style="border-radius: 15px;">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Modal para el carrito -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog custom-modal-size">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" i   d="cartModalLabel">Carrito de Compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body custom-cart-item-color" id="cartItems">
+                    <!-- Aquí es donde se agregarán los productos del carrito -->
+                </div>
+                <div class="modal-footer">
+                    <h5>Total: $<span id="totalPrice">0</span></h5>
+                    <button type="button" class="btn-agregar" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn-agregar" onclick="abrirCheckout()" data-bs-toggle="modal" data-bs-target="#checkoutModal">Proceder a Comprar</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
-    <!-- Cartas de productos-->
 
-  <!-- Sección de contenido principal de la tienda -->
-  <div class="content container mt-4">
-      <h1 class="centrar">Ghost Clothing - Tienda de los diseñadores</h1>
-      <p class="centrar">Explora los diseñadores y añade artículos al carrito.</p>
-      
-<!-- Grid de productos -->
-<div class="products-grid">
-    <hr><h1 class="centrar"> SKOOT </h1><hr>
+    <div class="products-grid">
+        <hr><h1 class="centrar"> SKOOT </h1><hr>
     <!-- Productos -->
     <div class="card">
         <img src="Clothing/Polera1.jpeg" class="card-img-top" alt="SLEEVE">
@@ -185,145 +176,144 @@
             <button class="btn-agregar" onclick="addItem('Jeans Cargo', 48000)">Agregar - $48,000</button>
         </div>
     </div>
+    </div>
 
-
-      <!-- Modal para confirmar la compra -->
-      <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="checkoutModalLabel">Confirmar Compra</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+    <!-- Modal para confirmar la compra -->
+    <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog custom-modal-size">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="checkoutModalLabel">Confirmar Compra</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="checkoutItems"></div>
+                    <h5>Total a pagar: $<span id="checkoutTotal">0</span></h5>
+                    <p id="emptyCartMessage" class="text-danger d-none">El carrito está vacío.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-agregar" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn-agregar" onclick="confirmarCompra()">Confirmar Compra</button>
+                </div>
             </div>
-            <div class="modal-body">
-              <div id="checkoutItems"></div>
-              <h5>Total a pagar: $<span id="checkoutTotal">0</span></h5>
-              <p id="emptyCartMessage" class="text-danger d-none">El carrito está vacío.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn-agregar" data-bs-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn-agregar" onclick="confirmarCompra()">Confirmar Compra</button>
-            </div>
-          </div>
         </div>
-      </div>
-      
+    </div>
+
+
     <!-- Modal de agradecimiento -->
-<div class="modal fade" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-      <div class="modal-content">
-          <div class="modal-header">
-              <h5 class="modal-title" id="thankYouModalLabel">¡Gracias por su compra!</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-          </div>
-          <div class="modal-body">
-              <p>Su pedido ha sido confirmado y está en proceso. ¡Gracias por confiar en nosotros!</p>
-          </div>
-          <div class="modal-footer">
-              <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
-          </div>
-      </div>
-  </div>
-</div>
-
-
-<br>
-<br> <h1 class="centrar"> ¡Arma tu outfit ahora!</h1>
-<br> <hr>
-
-<div class="carousel-container">
-    <!-- Primer carrusel -->
-    <div id="carousel1" class="carousel slide" data-bs-ride="false">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="Pics/png/poleron1.png" class="d-block w-100 carousel-image" alt="Imagen 1">
-            </div>
-            <div class="carousel-item">
-                <img src="Pics/png/poleron2.png" class="d-block w-100 carousel-image" alt="Imagen 2">
-            </div>
-            <div class="carousel-item">
-                <img src="Pics/png/poleron3.png" class="d-block w-100 carousel-image" alt="Imagen 3">
+    <div class="modal fade" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel" aria-hidden="true">
+        <div class="modal-dialog custom-modal-size">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="thankYouModalLabel">¡Gracias por su compra!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Su pedido ha sido confirmado y está en proceso. ¡Gracias por confiar en nosotros!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
+                </div>
             </div>
         </div>
-        <!-- Botones de control para el primer carrusel -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
 
-    <!-- Segundo carrusel -->
-    <div id="carousel2" class="carousel slide" data-bs-ride="false">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="Pics/png/polera1.jpeg" class="d-block w-100 carousel-image" alt="Imagen 4">
+    <br>
+    <br> <h1 class="centrar"> ¡Arma tu outfit ahora!</h1>
+    <br>
+
+    <div class="carousel-container">
+        <!-- Primer carrusel -->
+        <div id="carousel1" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="Pics/png/poleron1.png" class="d-block w-100 carousel-image" alt="Imagen 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="Pics/png/poleron2.png" class="d-block w-100 carousel-image" alt="Imagen 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="Pics/png/poleron3.png" class="d-block w-100 carousel-image" alt="Imagen 3">
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="Pics/png/polera2.jpeg" class="d-block w-100 carousel-image" alt="Imagen 5">
-            </div>
-            <div class="carousel-item">
-                <img src="Pics/png/polera3.jpeg" class="d-block w-100 carousel-image" alt="Imagen 6">
-            </div>
+            <!-- Botones de control para el primer carrusel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-        <!-- Botones de control para el segundo carrusel -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-
-    <!-- Tercer carrusel -->
-    <div id="carousel3" class="carousel slide" data-bs-ride="false">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="Pics/png/pants1.png" class="d-block w-100 carousel-image" alt="Imagen 7">
-            </div>
-            <div class="carousel-item">
-                <img src="Pics/png/pants2.png" class="d-block w-100 carousel-image" alt="Imagen 8">
-            </div>
-            <div class="carousel-item">
-                <img src="Pics/png/pants3.png" class="d-block w-100 carousel-image" alt="Imagen 9">
-            </div>
-        </div>
-        <!-- Botones de control para el tercer carrusel -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carousel3" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-</div>
-
- <hr> <hr>
- <footer class="footer">
-    <div class="footer-content">
-        <div class="footer-logo">
-            <img src="Pics/Ghost.png" alt="Logo" class="footer-logo-image">
-        </div>
-        <h1>~ Ghost Clothing~</h1>
-        <p class="footer-text">Encuentra las mejores prendas y prueba el conjunto antes de comprar, apoya marcas independientes</p>
-        <p class="footer-contact">Contacto: <a href="mailto:ghostsandclothes@gmail.com">ghostsandclothes@gmail.com</a></p>
-    </div>
-    <div class="footer-bottom">
-        &copy; 2024 ~Ghost Clothing~ Todos los derechos reservados.
-    </div>
-</footer>
-
-
-<hr>
-
-        <script src="script.js"></script>
     
-  </body>
-  </html>
+        <!-- Segundo carrusel -->
+        <div id="carousel2" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="Pics/png/polera1.jpeg" class="d-block w-100 carousel-image" alt="Imagen 4">
+                </div>
+                <div class="carousel-item">
+                    <img src="Pics/png/polera2.jpeg" class="d-block w-100 carousel-image" alt="Imagen 5">
+                </div>
+                <div class="carousel-item">
+                    <img src="Pics/png/polera3.jpeg" class="d-block w-100 carousel-image" alt="Imagen 6">
+                </div>
+            </div>
+            <!-- Botones de control para el segundo carrusel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    
+        <!-- Tercer carrusel -->
+        <div id="carousel3" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="Pics/png/pants1.png" class="d-block w-100 carousel-image" alt="Imagen 7">
+                </div>
+                <div class="carousel-item">
+                    <img src="Pics/png/pants2.png" class="d-block w-100 carousel-image" alt="Imagen 8">
+                </div>
+                <div class="carousel-item">
+                    <img src="Pics/png/pants3.png" class="d-block w-100 carousel-image" alt="Imagen 9">
+                </div>
+            </div>
+            <!-- Botones de control para el tercer carrusel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel3" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <hr>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="Pics/Ghost.png" alt="Logo" class="footer-logo-image">
+            </div>
+            <h1>~ Ghost Clothing~</h1>
+            <p class="footer-text">Encuentra las mejores prendas y prueba el conjunto antes de comprar, apoya marcas independientes</p>
+            <p class="footer-contact">Contacto: <a href="mailto:ghostsandclothes@gmail.com">ghostsandclothes@gmail.com</a></p>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 ~Ghost Clothing~ Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+
+</body>

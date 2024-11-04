@@ -11,7 +11,8 @@ body {
 }
 
 /* Mantiene el color blanco en los enlaces y el botón del carrito */
-.navbar .navbar-brand, .navbar .btn-outline-light {
+.navbar .navbar-brand,
+.navbar .btn-outline-light {
   color: #ffffff !important;
 }
 
@@ -44,10 +45,10 @@ body {
 .centrar {
   text-align: center;
   text-shadow: 
-  -2px -2px 0 #500303,        /* Sombra hacia la esquina superior izquierda */
-   2px -2px 0 #500303,        /* Sombra hacia la esquina superior derecha */
-  -2px  2px 0 #500303,        /* Sombra hacia la esquina inferior izquierda */
-   2px  2px 0#500303; 
+      -2px -2px 0 #500303,        /* Sombra hacia la esquina superior izquierda */
+      2px -2px 0 #500303,         /* Sombra hacia la esquina superior derecha */
+      -2px  2px 0 #500303,        /* Sombra hacia la esquina inferior izquierda */
+      2px  2px 0 #500303; 
 }
 
 .products-grid {
@@ -91,16 +92,16 @@ body {
 }
 
 .btn-agregar:hover {
-  background-color:#be0202;
+  background-color: #be0202;
   border-color: #be0202;
   transform: scale(1.05); /* Agranda el botón ligeramente */
 }
 
 /* Nueva clase para el texto dentro del modal */
-.modal-body p, .modal-body h5 {
+.modal-body p,
+.modal-body h5 {
   color: rgb(255, 255, 255); /* Cambia el color del texto dentro del modal a negro */
 }
-
 
 body {
   background-image: url("Pics/Wallpaper.png");
@@ -124,10 +125,10 @@ body {
   color: rgb(255, 255, 255); /* Cambia el color del texto a negro */
 }
 
-  /* Cambiar el color del fondo y del texto del modal */
-  .custom-modal-bg {
-    background-color: #202225;
-    color: #ffffff;
+/* Cambiar el color del fondo y del texto del modal */
+.custom-modal-bg {
+  background-color: #202225;
+  color: #ffffff;
 }
 
 .carousel-container {
@@ -225,4 +226,9 @@ body {
 /* Cambiar el color del fondo del pie del modal */
 .modal-footer {
   background-color: #202225; /* Cambia este valor al color que desees */
+}
+
+.custom-modal-size {
+  max-width: 800px; /* Ajusta el tamaño máximo según sea necesario */
+  width: 100%; /* Asegúrate de que se ajuste al 100% del ancho del contenedor */
 }
