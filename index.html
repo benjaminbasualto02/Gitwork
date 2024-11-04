@@ -55,27 +55,6 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-
-    <!-- Modal para el carrito -->
-    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-        <div class="modal-dialog custom-modal-size">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" i   d="cartModalLabel">Carrito de Compras</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body custom-cart-item-color" id="cartItems">
-                    <!-- Aquí es donde se agregarán los productos del carrito -->
-                </div>
-                <div class="modal-footer">
-                    <h5>Total: $<span id="totalPrice">0</span></h5>
-                    <button type="button" class="btn-agregar" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn-agregar" onclick="abrirCheckout()" data-bs-toggle="modal" data-bs-target="#checkoutModal">Proceder a Comprar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="products-grid">
         <hr><h1 class="centrar"> SKOOT </h1><hr>
     <!-- Productos -->
@@ -178,26 +157,106 @@
     </div>
     </div>
 
+        <!-- Modal para el carrito -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog custom-modal-size">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body custom-cart-item-color" id="cartItems">
+                    <!-- Aquí es donde se agregarán los productos del carrito -->
+                </div>
+                <div class="modal-footer">
+                    <h5>Total: $<span id="totalPrice">0</span></h5>
+                    <button type="button" class="btn-agregar" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn-agregar" onclick="abrirCheckout()" data-bs-toggle="modal" data-bs-target="#checkoutModal">Proceder a Comprar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal para confirmar la compra -->
     <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
         <div class="modal-dialog custom-modal-size">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="checkoutModalLabel">Confirmar Compra</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
                 <div class="modal-body">
-                    <div id="checkoutItems"></div>
+                    <div id="checkoutItems">
+                        <!-- Productos en el carrito a confirmar -->
+                    </div>
                     <h5>Total a pagar: $<span id="checkoutTotal">0</span></h5>
                     <p id="emptyCartMessage" class="text-danger d-none">El carrito está vacío.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn-agregar" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn-agregar" onclick="confirmarCompra()">Confirmar Compra</button>
+                    <button type="button" class="btn-agregar data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn-agregar" data-bs-toggle="modal" data-bs-target="#customerInfoModal">Agregar direccion</button>
                 </div>
             </div>
         </div>
     </div>
+
+<!-- Modal para formulario de datos de cliente -->
+<div class="modal fade" id="customerInfoModal" tabindex="-1" aria-labelledby="customerInfoModalLabel" aria-hidden="true">
+    <div class="modal-dialog custom-modal-size">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="customerInfoModalLabel">Información de Cliente</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <form id="customerForm">
+                    <div class="mb-3">
+                        <label for="fullName" class="form-label">Nombre Completo</label>
+                        <input type="text" class="form-control" id="fullName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Teléfono</label>
+                        <input type="tel" class="form-control" id="phone" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="rut" class="form-label">RUT</label>
+                        <input type="text" class="form-control" id="rut" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="region" class="form-label">Región</label>
+                        <select class="form-select" id="region" required onchange="actualizarComunas()">
+                            <option value="">Seleccione una región</option>
+                            <!-- Las opciones de región se cargarán dinámicamente -->
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="comuna" class="form-label">Comuna</label>
+                        <select class="form-select" id="comuna" required>
+                            <option value="">Seleccione una comuna</option>
+                            <!-- Las opciones de comuna se cargarán dinámicamente -->
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Dirección</label>
+                        <input type="text" class="form-control" id="address" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="addressReference" class="form-label">Referencia de Dirección (Opcional)</label>
+                        <input type="text" class="form-control" id="addressReference">
+                    </div>
+                    <div class="mb-3">
+                        <label for="postalCode" class="form-label">Código Postal (Opcional)</label>
+                        <input type="text" class="form-control" id="postalCode">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-agregar" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn-agregar" onclick="if (guardarDatosCliente()) confirmarCompra();">Guardar y Continuar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
     <!-- Modal de agradecimiento -->
@@ -206,7 +265,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="thankYouModalLabel">¡Gracias por su compra!</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
                 <div class="modal-body">
                     <p>Su pedido ha sido confirmado y está en proceso. ¡Gracias por confiar en nosotros!</p>
@@ -217,6 +276,10 @@
             </div>
         </div>
     </div>
+
+
+
+
 
     <br>
     <br> <h1 class="centrar"> ¡Arma tu outfit ahora!</h1>

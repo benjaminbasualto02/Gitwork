@@ -149,3 +149,91 @@ function confirmarCompra() {
     }
 }
 
+function guardarDatosCliente() {
+    const fullName = document.getElementById('fullName').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const rut = document.getElementById('rut').value.trim();
+    const region = document.getElementById('region').value.trim();
+    const comuna = document.getElementById('comuna').value.trim();
+    const address = document.getElementById('address').value.trim();
+
+    // Validar que los campos requeridos estén llenos
+    if (!fullName || !phone || !rut || !region || !comuna || !address) {
+        alert("Por favor, ingrese sus datos.");
+        return false; // Detener la función si faltan datos
+    }
+
+    // Si todos los campos están llenos, guardar los datos
+    const customerData = {
+        fullName,
+        phone,
+        rut,
+        region,
+        comuna,
+        address,
+        addressReference: document.getElementById('addressReference').value.trim(),
+        postalCode: document.getElementById('postalCode').value.trim()
+    };
+
+    console.log("Datos del cliente:", customerData); // Aquí puedes manejar el envío de datos
+
+    // Cerrar el modal después de guardar los datos
+    const customerInfoModalEl = document.getElementById('customerInfoModal');
+    const customerInfoModal = bootstrap.Modal.getInstance(customerInfoModalEl);
+    customerInfoModal.hide();
+
+    alert("Información de cliente guardada exitosamente.");
+
+    return true; // Indicar que la función se ejecutó correctamente
+}
+
+const regionesComunas = {
+    "Región de Arica y Parinacota": ["Arica", "Camarones", "Putre", "General Lagos"],
+    "Región de Tarapacá": ["Iquique", "Alto Hospicio", "Pozo Almonte", "Camiña", "Colchane", "Huara", "Pica"],
+    "Región de Antofagasta": ["Antofagasta", "Mejillones", "Sierra Gorda", "Taltal", "Calama", "Ollagüe", "San Pedro de Atacama", "Tocopilla", "María Elena"],
+    "Región de Atacama": ["Copiapó", "Caldera", "Tierra Amarilla", "Chañaral", "Diego de Almagro", "Vallenar", "Alto del Carmen", "Freirina", "Huasco"],
+    "Región de Coquimbo": ["La Serena", "Coquimbo", "Andacollo", "La Higuera", "Paiguano", "Vicuña", "Illapel", "Canela", "Los Vilos", "Salamanca", "Ovalle", "Combarbalá", "Monte Patria", "Punitaqui", "Río Hurtado"],
+    "Región de Valparaíso": ["Valparaíso", "Casablanca", "Concón", "Juan Fernández", "Puchuncaví", "Quintero", "Viña del Mar", "Isla de Pascua", "Los Andes", "Calle Larga", "Rinconada", "San Esteban", "La Ligua", "Cabildo", "Papudo", "Petorca", "Zapallar", "Quillota", "La Calera", "Hijuelas", "La Cruz", "Nogales", "San Antonio", "Algarrobo", "Cartagena", "El Quisco", "El Tabo", "Santo Domingo", "San Felipe", "Catemu", "Llaillay", "Panquehue", "Putaendo", "Santa María", "Quilpué", "Limache", "Olmué", "Villa Alemana"],
+    "Región Metropolitana": ["Santiago", "Cerrillos", "Cerro Navia", "Estación Central", "Huechuraba", "La Cisterna", "La Florida", "La Granja", "Las Condes", "Lo Barnechea", "Lo Espejo", "Maipú", "Ñuñoa", "Pedro Aguirre Cerda", "Peñalolén", "Providencia", "Puente Alto", "Quilicura", "Recoleta", "Renca", "San Bernardo", "San Joaquín", "San Miguel", "San Ramón", "Vitacura"],
+    "Región de O'Higgins": ["Rancagua", "Codegua", "Coinco", "Coltauco", "Doñihue", "Graneros", "Las Cabras", "Machalí", "Malloa", "Olivar", "Pichidegua", "Quinta de Tilcoco", "Rengo", "Requínoa", "San Vicente de Tagua Tagua"],
+    "Región del Maule": ["Talca", "Cauquenes", "Colbún", "Curicó", "Empedrado", "Hualañé", "Licantén", "Maule", "Pelarco", "Pencahue", "Río Claro", "San Clemente", "San Javier", "Talca", "Teno", "Vichuquén"],
+    "Región de Ñuble": ["Chillán", "Chillán Viejo", "El Carmen", "Pemuco", "Quillón", "San Carlos", "San Ignacio", "Yungay"],
+    "Región del Bío Bío": ["Concepción", "Coronel", "Lota", "Talcahuano", "San Pedro de la Paz", "Hualpén", "Penco", "Tomé", "Santa Juana", "Chiguayante", "Florida", "Laja", "Los Ángeles", "Mulchén", "Nacimiento", "Negrete", "Quilleco", "San Rosendo", "Tucapel", "Yumbel", "Antuco", "Cabrero", "Laja", "Penco"],
+    "Región de La Araucanía": ["Temuco", "Padre Las Casas", "Vilcún", "Gorbea", "Lautaro", "Pitrufquén", "Toltén", "Freire", "Teodoro Schmidt", "Curarrehue", "Villarrica", "Pucón", "Loncoche", "San José de la Mariquina", "Nueva Imperial", "Los Sauces", "Traiguén", "Lumaco", "Carahue"],
+    "Región de Los Ríos": ["Valdivia", "Corral", "Lanco", "Los Lagos", "Máfil", "Mariquina", "Paillaco", "Panguipulli"],
+    "Región de Los Lagos": ["Puerto Montt", "Puerto Varas", "Calbuco", "Cochamó", "Fresia", "Frutillar", "Los Muermos", "Llanquihue", "Maullín", "Osorno", "San Pablo", "Castro", "Ancud", "Curaco de Vélez", "Dalcahue", "Puqueldón", "Queilén", "Quinchao"],
+    "Región de Aysén": ["Coyhaique", "Aysén", "Chile Chico", "Cisnes", "Guaitecas", "Lago Verde", "Puerto Aysén", "Rio Ibáñez"],
+    "Región de Magallanes y de la Antártica Chilena": ["Punta Arenas", "Natales", "Porvenir", "Primavera", "Timaukel", "Torres del Paine", "Cabo de Hornos", "Antártica Chilena"]
+};
+
+// Función para llenar el select de regiones al cargar la página
+function cargarRegiones() {
+    const regionSelect = document.getElementById("region");
+    for (const region in regionesComunas) {
+        const option = document.createElement("option");
+        option.value = region;
+        option.textContent = region;
+        regionSelect.appendChild(option);
+    }
+}
+
+// Función para actualizar el select de comunas basado en la región seleccionada
+function actualizarComunas() {
+    const regionSelect = document.getElementById("region");
+    const comunaSelect = document.getElementById("comuna");
+    const comunas = regionesComunas[regionSelect.value] || [];
+
+    // Limpiar las opciones de comuna anteriores
+    comunaSelect.innerHTML = '<option value="">Seleccione una comuna</option>';
+
+    // Agregar las nuevas opciones de comuna
+    comunas.forEach(comuna => {
+        const option = document.createElement("option");
+        option.value = comuna;
+        option.textContent = comuna;
+        comunaSelect.appendChild(option);
+    });
+}
+
+// Llamar a cargarRegiones al cargar la página
+document.addEventListener("DOMContentLoaded", cargarRegiones);
