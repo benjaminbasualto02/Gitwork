@@ -203,7 +203,7 @@ const regionesComunas = {
     "Región de Los Ríos": ["Valdivia", "Corral", "Lanco", "Los Lagos", "Máfil", "Mariquina", "Paillaco", "Panguipulli"],
     "Región de Los Lagos": ["Puerto Montt", "Puerto Varas", "Calbuco", "Cochamó", "Fresia", "Frutillar", "Los Muermos", "Llanquihue", "Maullín", "Osorno", "San Pablo", "Castro", "Ancud", "Curaco de Vélez", "Dalcahue", "Puqueldón", "Queilén", "Quinchao"],
     "Región de Aysén": ["Coyhaique", "Aysén", "Chile Chico", "Cisnes", "Guaitecas", "Lago Verde", "Puerto Aysén", "Rio Ibáñez"],
-    "Región de Magallanes y de la Antártica Chilena": ["Punta Arenas", "Natales", "Porvenir", "Primavera", "Timaukel", "Torres del Paine", "Cabo de Hornos", "Antártica Chilena"]
+    "Región de Magallanes": ["Punta Arenas", "Natales", "Porvenir", "Primavera", "Timaukel", "Torres del Paine", "Cabo de Hornos"]
 };
 
 // Función para llenar el select de regiones al cargar la página
