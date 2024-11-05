@@ -34,27 +34,27 @@
 
     <!-- Carrusel de imagenes principal -->
 
-    <div id="carouselExample" class="carousel slide" style="max-width: 700px; max-height: 600px; margin: auto; border-radius: 15px; overflow: hidden; border: 3px solid #212529;">
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" style="max-width: 700px; max-height: 600px; margin: auto; border-radius: 15px; overflow: hidden; border: 3px solid #212529;">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="Clothing/Polera1.jpeg" class="d-block w-100" alt="Muestra 1" style="border-radius: 15px;">
             </div>
             <div class="carousel-item">
-                <img src="Clothing/Polera2.jpeg" class="d-block w-100" alt="Muestra 2" style="border-radius: 15px;">
+                <img src="Clothing/Poleron2.jpeg" class="d-block w-100" alt="Muestra 2" style="border-radius: 15px;">
             </div>
             <div class="carousel-item">
-                <img src="Clothing/Polera3.jpeg" class="d-block w-100" alt="Muestra 3" style="border-radius: 15px;">
+                <img src="Clothing/Polera2.jpeg" class="d-block w-100" alt="Muestra 3" style="border-radius: 15px;">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+            <span class="visually-hidden">Anterior</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+            <span class="visually-hidden">Siguiente</span>
         </button>
-    </div>
+    </div>    
     <div class="products-grid">
         <hr><h1 class="centrar"> SKOOT </h1><hr>
     <!-- Productos -->
@@ -193,7 +193,7 @@
                     <p id="emptyCartMessage" class="text-danger d-none">El carrito está vacío.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn-agregar data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn-agregar" data-bs-dismiss="modal">Cerrar</button>
                     <button type="button" class="btn-agregar" data-bs-toggle="modal" data-bs-target="#customerInfoModal">Agregar direccion</button>
                 </div>
             </div>
